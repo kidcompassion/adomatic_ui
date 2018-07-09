@@ -1,0 +1,75 @@
+<main class="container">
+    
+        
+            
+            <form
+            class="row"
+            #createAdForm = "ngForm"
+            (ngSubmit) =  "onSubmit(createAdForm.value)">
+            <section class="create--form col-5">
+                <label>Ad Title</label>
+                <input type="text" class="form-control" name="adTitle" ngModel>
+                 
+
+                <label>Desktop Art</label>
+                <input type="file" class="form-control" name="adDesktopArt" ngModel>
+
+
+                <label>Desktop Url</label>
+                <input type="text" class="form-control" name="adDesktopUrl" ngModel>
+
+                 <label>Mobile Art</label>
+                <input type="file" class="form-control" name="adMobileArt" ngModel>
+
+                <label>Mobile Url</label>
+                <input type="text" class="form-control" name="adMobileUrl" ngModel>
+
+                <label>Start Date</label>
+                <input type="date" class="form-control" name="adStartDate" ngModel>
+
+                <label>End Date</label>
+                <input type="date" class="form-control" name="adEndDate" ngModel>
+
+                <button type="submit">Save</button>
+            </section>
+    
+        <section class="preview--form col-6">
+            <h3>{{advertisement.adTitle}}</h3>
+            
+
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="desktop-tab" data-toggle="tab" href="#desktop" role="tab" aria-controls="desktop" aria-selected="true">Desktop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="mobile-tab" data-toggle="tab" href="#mobile" role="tab" aria-controls="mobile" aria-selected="false">Mobile</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="desktop" role="tabpanel" aria-labelledby="home-tab">
+                  
+                <section class="desktop--example">
+                    <a href="{{advertisement.adDesktopUrl}}">
+                        <img src="{{advertisement.adDesktopArt}}"/>
+                    </a>
+                </section>
+
+              </div>
+              <div class="tab-pane fade" id="mobile" role="tabpanel" aria-labelledby="profile-tab">
+                   <section class="ad--metadata">
+                        <p>Start date: {{advertisement.adStartDate}}</p>
+                        <p>End date: {{advertisement.adEndDate}}</p>
+                        <p>Price: $10.00</p>
+                    </section>     
+              </div>
+        
+            </div>
+        <button>Purchase</button>
+        </section>
+           </form>
+
+            
+        
+
+    
+</main>

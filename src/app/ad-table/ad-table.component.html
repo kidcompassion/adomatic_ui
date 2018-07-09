@@ -1,0 +1,24 @@
+<main class="container">
+    <div class="row">
+        <table class="table">
+          <thead>
+            <tr (click)="viewAd()">
+              <th scope="col"><input type="checkbox"></th>
+              <th scope="col">Ad Title</th>
+              <th scope="col">Status</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+            </tr>
+          </thead>
+          <tbody *ngFor = "let ad of ads">
+            <tr [routerLink] = "['/view-ad', ad.id]">
+              <td><input type="checkbox"></td>
+              <td>{{ ad.adTitle }}</td>
+              <td>{{ ad.adStatus }}</td>
+              <td>{{ ad.startDate }}</td>
+              <td>{{ ad.endDate }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</main>
