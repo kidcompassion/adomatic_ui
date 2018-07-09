@@ -2,9 +2,10 @@
     <div class="row">
         <section class="col-8">
             <h3>My Profile</h3>
-            <p>Username: Buttmonster </p>
-            <p>Reset Password </p>
-            <button> Save</button>
+            <p>Username: {{ currentUser.name}}</p>
+            <p>Member since: {{ currentUser.joinDate}}</p>
+            <p><a href="#">Reset Password </a></p>
+            <button class="btn btn-danger"> Delete my Account </button>
         </section>
     </div>
 </main>

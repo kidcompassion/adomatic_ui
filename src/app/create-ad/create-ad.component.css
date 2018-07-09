@@ -7,3 +7,11 @@ label {
 .nav-tabs {
     font-weight: bold;
 }
+
+
+.nav-tabs .nav-link {
+    color: #133046;
+}
+.nav-tabs .active {
+    color: #EC9770;
+}

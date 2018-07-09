@@ -10,6 +10,8 @@ import { AdTableComponent } from './ad-table/ad-table.component';
 import { CreateAdComponent } from './create-ad/create-ad.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ViewAdComponent } from './view-ad/view-ad.component';
+import { CreateAdServiceService } from './create-ad/services/create-ad-service.service';
+import { ProfileService } from './profile/services/profile.service';
 
 
 const appRoutes: Routes = [
@@ -38,7 +40,11 @@ const appRoutes: Routes = [
     ),
     DlDateTimePickerDateModule
   ],
-  providers: [FormsModule],
+  providers: [
+    FormsModule,
+    CreateAdServiceService,
+    ProfileService
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CreateAdServiceService } from './services/create-ad-service.service';
 
 @Component({
   selector: 'app-create-ad',
@@ -9,32 +10,33 @@ export class CreateAdComponent implements OnInit {
 
   advertisement : {};
 
-
-  constructor() { 
+  constructor(private createAdServiceService : CreateAdServiceService) { 
       this.advertisement = {};
   }    
 
   ngOnInit() {
-      
-      
-      
+       //this.createAdServiceService = this.createAdServiceService.get();
+       this.createAdServiceService.saveAd();
   }
 
-  onSubmit(mediaItem, advertisement, adTitle){
+  onSubmit(mediaItem){
       this.advertisement = mediaItem;
       
-      console.log(this.advertisement); //passes data to endpoint
-     // console.log(adTitle);
-      //calculateDuration()
-      //calculatePrice()
-  }
+      //upload images and save to laravel via service
+      //save fields to laravel via service
 
-  calculateDuration() {
+    //  this.createAdService.saveAd(mediaItem);
+      console.log(this.advertisement); //passes data to service for calculation
 
   }
 
-  calculatePrice() {
+  totalDuration() {
+    //retrieves data from service
 
+  }
+
+  totalPrice() {
+    //retrieves data from service
   }
 
 

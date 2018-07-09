@@ -1,6 +1,6 @@
 <main class="container">
     
-        
+        <h3 class="text-center"> Create an Ad</h3>
             
             <form
             class="row"
@@ -56,12 +56,19 @@
 
               </div>
               <div class="tab-pane fade" id="mobile" role="tabpanel" aria-labelledby="profile-tab">
+                 <section class="mobile--example">
+                    <a href="{{advertisement.adMobileUrl}}">
+                        <img src="{{advertisement.adMobileArt}}"/>
+                    </a>
+                </section>
+  
+              </div>
+              
                    <section class="ad--metadata">
                         <p>Start date: {{advertisement.adStartDate}}</p>
                         <p>End date: {{advertisement.adEndDate}}</p>
                         <p>Price: $10.00</p>
-                    </section>     
-              </div>
+                    </section>   
         
             </div>
         <button>Purchase</button>
